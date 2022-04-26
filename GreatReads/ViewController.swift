@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     
     
+    @IBOutlet weak var MainPageTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
    //     if let bookTitle = titleTextField.text {
@@ -29,8 +30,18 @@ class ViewController: UIViewController {
         
         
         
+        MainPageTableView.dataSource = self
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
 
 
 
+}
 
