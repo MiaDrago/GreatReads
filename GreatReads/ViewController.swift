@@ -9,11 +9,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var totalPagesTextField: UITextField!
+    @IBOutlet weak var curerntPageTextField: UITextField!
+    
+   
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+   //     if let bookTitle = titleTextField.text {
+            
+        }
+        
+        
+        
+        
+        
     }
 
 
-}
+
 
