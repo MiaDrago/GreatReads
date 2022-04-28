@@ -11,9 +11,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
    
     @IBOutlet weak var MainPageTableView: UITableView!
+   
     var list = ["author", ]
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+
     MainPageTableView.dataSource = self
         }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
