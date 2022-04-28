@@ -14,34 +14,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var totalPagesTextField: UITextField!
     @IBOutlet weak var curerntPageTextField: UITextField!
-    
-   
-    
-    
-    
     @IBOutlet weak var MainPageTableView: UITableView!
+    var list = ["author", ]
     override func viewDidLoad() {
         super.viewDidLoad()
-   //     if let bookTitle = titleTextField.text {
-            
+     if let bookTitle = titleTextField.text {
+    MainPageTableView.dataSource = self
         }
-        
-        
-        
-        
-        
-        MainPageTableView.dataSource = self
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainPageCell", for: indexPath)
+        cell.textLabel?.text = "\(list[indexPath.row])"
+        return cell
     }
 
-
-
+func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+       if editingStyle == UITableViewCell.EditingStyle.delete{
+           list.remove(at: indexPath.row)
+           tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
 }
 
+}
+    
+}
