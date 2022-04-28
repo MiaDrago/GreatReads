@@ -84,33 +84,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3ha-Hp-2LH">
-                                <rect key="frame" x="0.0" y="88" width="414" height="742"/>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqW-sI-8zV">
-                                <rect key="frame" x="157" y="838" width="100" height="44"/>
+                                <rect key="frame" x="157" y="1294" width="100" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Search">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                 </buttonConfiguration>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tMT-SS-9RL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="724"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4d2-a1-wvS">
+                                <rect key="frame" x="157" y="829" width="100" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Search">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="searchPressed:" destination="ENh-BM-Gfu" eventType="touchUpInside" id="kXd-9p-1Go"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mTd-Xb-54L"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mTd-Xb-54L" firstAttribute="bottom" secondItem="3ha-Hp-2LH" secondAttribute="bottom" id="Ve1-N4-414"/>
-                            <constraint firstItem="3ha-Hp-2LH" firstAttribute="top" secondItem="mTd-Xb-54L" secondAttribute="top" id="eK2-9w-w7M"/>
-                            <constraint firstItem="mTd-Xb-54L" firstAttribute="trailing" secondItem="3ha-Hp-2LH" secondAttribute="trailing" id="fUw-H7-S47"/>
-                            <constraint firstItem="3ha-Hp-2LH" firstAttribute="leading" secondItem="mTd-Xb-54L" secondAttribute="leading" id="ifM-bZ-vNO"/>
+                            <constraint firstItem="mTd-Xb-54L" firstAttribute="bottom" secondItem="tMT-SS-9RL" secondAttribute="bottom" constant="50" id="OMM-Uq-HsQ"/>
+                            <constraint firstItem="tMT-SS-9RL" firstAttribute="top" secondItem="mTd-Xb-54L" secondAttribute="top" id="VNF-cm-iDU"/>
+                            <constraint firstItem="tMT-SS-9RL" firstAttribute="top" secondItem="mTd-Xb-54L" secondAttribute="top" id="rXd-iq-cpw"/>
+                            <constraint firstItem="tMT-SS-9RL" firstAttribute="leading" secondItem="mTd-Xb-54L" secondAttribute="leading" id="wnI-Tr-uzf"/>
+                            <constraint firstItem="mTd-Xb-54L" firstAttribute="trailing" secondItem="tMT-SS-9RL" secondAttribute="trailing" id="zbm-Wc-0Lr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gGO-8y-Rqn">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="plus.magnifyingglass" catalog="system" id="tyU-uS-sE1"/>
-                            <barButtonItem title="Item" image="minus.magnifyingglass" catalog="system" id="4fh-Kd-ENs"/>
+                            <barButtonItem title="Item" image="plus.magnifyingglass" catalog="system" id="tyU-uS-sE1">
+                                <connections>
+                                    <action selector="zoomIn:" destination="ENh-BM-Gfu" id="a7I-zB-gxd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="minus.magnifyingglass" catalog="system" id="4fh-Kd-ENs">
+                                <connections>
+                                    <action selector="zoomOut:" destination="ENh-BM-Gfu" id="A9r-CX-nEV"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="tMT-SS-9RL" id="pNe-b4-5xV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXr-pC-vzR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
