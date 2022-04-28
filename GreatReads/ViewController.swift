@@ -22,7 +22,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var MainPageTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-   //     if let bookTitle = titleTextField.text {
+        MainPageTableView.dataSource = self
+        
+        if let bookTitle = titleTextField.text {
             
         }
         
@@ -30,18 +32,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         
-        MainPageTableView.dataSource = self
+       
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
     }
+
+
 
 
 
 }
-

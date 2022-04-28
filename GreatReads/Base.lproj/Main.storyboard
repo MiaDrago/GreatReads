@@ -41,8 +41,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LkV-8z-kZV">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="gMa-P8-vj0"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="8dg-HD-4Uz"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="gMa-P8-vj0">
+                            <connections>
+                                <segue destination="ENh-BM-Gfu" kind="show" id="r3B-Z0-syt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="8dg-HD-4Uz">
+                            <connections>
+                                <segue destination="9iy-br-0Rz" kind="show" id="n9O-0R-IDg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="MainPageTableView" destination="YOj-HS-rLe" id="Xl1-em-ajx"/>
@@ -51,6 +59,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="83.705357142857139"/>
+        </scene>
+        <!--Add View Controller-->
+        <scene sceneID="Eiz-XR-Lpc">
+            <objects>
+                <viewController id="9iy-br-0Rz" customClass="AddViewController" customModule="GreatReads" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oLU-jY-NVf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fBC-uC-0m4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WXC-nb-7Tt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eth-eK-qjJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="357"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="vzW-ju-Hg8">
+            <objects>
+                <viewController id="ENh-BM-Gfu" customClass="MapViewController" customModule="GreatReads" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OhR-nu-aCW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3ha-Hp-2LH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="742"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqW-sI-8zV">
+                                <rect key="frame" x="157" y="838" width="100" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Search">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mTd-Xb-54L"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mTd-Xb-54L" firstAttribute="bottom" secondItem="3ha-Hp-2LH" secondAttribute="bottom" id="Ve1-N4-414"/>
+                            <constraint firstItem="3ha-Hp-2LH" firstAttribute="top" secondItem="mTd-Xb-54L" secondAttribute="top" id="eK2-9w-w7M"/>
+                            <constraint firstItem="mTd-Xb-54L" firstAttribute="trailing" secondItem="3ha-Hp-2LH" secondAttribute="trailing" id="fUw-H7-S47"/>
+                            <constraint firstItem="3ha-Hp-2LH" firstAttribute="leading" secondItem="mTd-Xb-54L" secondAttribute="leading" id="ifM-bZ-vNO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gGO-8y-Rqn">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="plus.magnifyingglass" catalog="system" id="tyU-uS-sE1"/>
+                            <barButtonItem title="Item" image="minus.magnifyingglass" catalog="system" id="4fh-Kd-ENs"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fXr-pC-vzR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1744.9275362318842" y="-603.34821428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="drl-0i-MRR">
@@ -73,7 +137,9 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="minus.magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus.magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
