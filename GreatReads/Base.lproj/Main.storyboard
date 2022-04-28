@@ -46,7 +46,7 @@
                                 <segue destination="ENh-BM-Gfu" kind="show" id="r3B-Z0-syt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="8dg-HD-4Uz">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="book.fill" catalog="system" id="8dg-HD-4Uz">
                             <connections>
                                 <segue destination="9iy-br-0Rz" kind="show" id="n9O-0R-IDg"/>
                             </connections>
@@ -67,14 +67,85 @@
                     <view key="view" contentMode="scaleToFill" id="oLU-jY-NVf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="c5O-vI-MuZ">
+                                <rect key="frame" x="0.0" y="118" width="414" height="744"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8rd-IT-V1X">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="163.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2jj-ye-Mom">
+                                        <rect key="frame" x="0.0" y="193.5" width="414" height="163.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Fb-LA-kDg">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="163.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulG-et-gEH">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="163.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iIB-uK-1bV">
+                                        <rect key="frame" x="0.0" y="387" width="414" height="163.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current Page" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YpX-Nz-ggm">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="163.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Total Pages" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MaY-ud-bOC">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="163.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%%%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrB-z9-2aD">
+                                        <rect key="frame" x="0.0" y="580.5" width="414" height="163.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add A New Book!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zG3-TN-Fel">
+                                <rect key="frame" x="141" y="79" width="133" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fBC-uC-0m4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c5O-vI-MuZ" firstAttribute="top" secondItem="fBC-uC-0m4" secondAttribute="top" constant="30" id="C5t-98-xrg"/>
+                            <constraint firstItem="fBC-uC-0m4" firstAttribute="trailing" secondItem="c5O-vI-MuZ" secondAttribute="trailing" id="Nct-Yv-ltc"/>
+                            <constraint firstItem="fBC-uC-0m4" firstAttribute="bottom" secondItem="c5O-vI-MuZ" secondAttribute="bottom" id="UwH-b7-rwM"/>
+                            <constraint firstItem="c5O-vI-MuZ" firstAttribute="leading" secondItem="fBC-uC-0m4" secondAttribute="leading" id="g7o-gK-cbF"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WXC-nb-7Tt"/>
+                    <navigationItem key="navigationItem" id="WXC-nb-7Tt">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="bookmark.fill" catalog="system" id="GST-Ff-FVh"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="PercentageDoneLabel" destination="IrB-z9-2aD" id="lX4-fa-N5q"/>
+                        <outlet property="curerntPageTextField" destination="YpX-Nz-ggm" id="N8Z-6f-KQw"/>
+                        <outlet property="firstNameTextField" destination="4Fb-LA-kDg" id="Wf2-qb-df2"/>
+                        <outlet property="lastNameTextField" destination="ulG-et-gEH" id="YfA-lT-GDe"/>
+                        <outlet property="titleTextField" destination="8rd-IT-V1X" id="R4L-mQ-d07"/>
+                        <outlet property="totalPagesTextField" destination="MaY-ud-bOC" id="xbr-Ca-qvD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eth-eK-qjJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1839" y="357"/>
+            <point key="canvasLocation" x="1837.68115942029" y="356.91964285714283"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="vzW-ju-Hg8">
@@ -136,9 +207,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
+        <image name="bookmark.fill" catalog="system" width="112" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="minus.magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

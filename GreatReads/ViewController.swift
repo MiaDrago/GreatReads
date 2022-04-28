@@ -9,26 +9,13 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var totalPagesTextField: UITextField!
-    @IBOutlet weak var curerntPageTextField: UITextField!
+   
     @IBOutlet weak var MainPageTableView: UITableView!
     var list = ["author", ]
     override func viewDidLoad() {
         super.viewDidLoad()
-     if let bookTitle = titleTextField.text {
     MainPageTableView.dataSource = self
         }
-        
-        
-        
-        
-        
-       
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
@@ -44,6 +31,7 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
            list.remove(at: indexPath.row)
            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
 }
+
 
 }
     
