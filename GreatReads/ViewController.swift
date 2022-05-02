@@ -34,8 +34,7 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
            list.remove(at: indexPath.row)
            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
 }
-
-
 }
-    
+   
 }
+

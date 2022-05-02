@@ -22,10 +22,10 @@ class AddViewController: UIViewController {
      
         if let TotalPages = totalPagesTextField.text, let CurrentPage = curerntPageTextField.text
         {
-        let TotalPagesInteger = Int(TotalPages)!
-        let CurrentPageInteger = Int(CurrentPage)!
-        let percentageDone = CurrentPageInteger / TotalPagesInteger
-            PercentageDoneLabel.text = "\(percentageDone * 100)"
+       // let TotalPagesInteger = Int(TotalPages)!
+       // let CurrentPageInteger = Int(CurrentPage)!
+       // let percentageDone = CurrentPageInteger / TotalPagesInteger
+           // PercentageDoneLabel.text = "\(percentageDone * 100)"
         }
   
     }

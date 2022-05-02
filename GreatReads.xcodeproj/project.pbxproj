@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12266E5E28202D230032956E /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12266E5D28202D230032956E /* EditViewController.swift */; };
 		1256085428184BD70064A235 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256085328184BD70064A235 /* AppDelegate.swift */; };
 		1256085628184BD70064A235 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256085528184BD70064A235 /* SceneDelegate.swift */; };
 		1256085828184BD70064A235 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1256085728184BD70064A235 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12266E5D28202D230032956E /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		1256085028184BD70064A235 /* GreatReads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatReads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1256085328184BD70064A235 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1256085528184BD70064A235 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				1256085528184BD70064A235 /* SceneDelegate.swift */,
 				1256085728184BD70064A235 /* ViewController.swift */,
 				1256085928184BD70064A235 /* Main.storyboard */,
+				12266E5D28202D230032956E /* EditViewController.swift */,
 				9485BB9A281AE64600EFA592 /* AddViewController.swift */,
 				9485BB98281AE60200EFA592 /* MapViewController.swift */,
 				1256085C28184BD90064A235 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			files = (
 				9485BB9B281AE64600EFA592 /* AddViewController.swift in Sources */,
 				1256085828184BD70064A235 /* ViewController.swift in Sources */,
+				12266E5E28202D230032956E /* EditViewController.swift in Sources */,
 				1256085428184BD70064A235 /* AppDelegate.swift in Sources */,
 				1256085628184BD70064A235 /* SceneDelegate.swift in Sources */,
 				9485BB99281AE60200EFA592 /* MapViewController.swift in Sources */,
