@@ -67,7 +67,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="book.fill" catalog="system" id="8dg-HD-4Uz">
                             <connections>
-                                <segue destination="9iy-br-0Rz" kind="show" id="n9O-0R-IDg"/>
+                                <segue destination="9iy-br-0Rz" kind="show" identifier="addSegue" id="n9O-0R-IDg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -227,12 +227,10 @@
                             <constraint firstItem="c5O-vI-MuZ" firstAttribute="leading" secondItem="fBC-uC-0m4" secondAttribute="leading" id="g7o-gK-cbF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WXC-nb-7Tt">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="bookmark.fill" catalog="system" id="GST-Ff-FVh"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="WXC-nb-7Tt"/>
                     <connections>
                         <outlet property="PercentageDoneLabel" destination="IrB-z9-2aD" id="lX4-fa-N5q"/>
-                        <outlet property="curerntPageTextField" destination="YpX-Nz-ggm" id="N8Z-6f-KQw"/>
+                        <outlet property="currentPageTexrField" destination="YpX-Nz-ggm" id="rDa-nw-zE8"/>
                         <outlet property="firstNameTextField" destination="4Fb-LA-kDg" id="Wf2-qb-df2"/>
                         <outlet property="lastNameTextField" destination="ulG-et-gEH" id="YfA-lT-GDe"/>
                         <outlet property="titleTextField" destination="8rd-IT-V1X" id="R4L-mQ-d07"/>
@@ -327,7 +325,6 @@
     </scenes>
     <resources>
         <image name="book.fill" catalog="system" width="128" height="95"/>
-        <image name="bookmark.fill" catalog="system" width="112" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="minus.magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus.magnifyingglass" catalog="system" width="128" height="115"/>
