@@ -12,29 +12,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
    
     @IBOutlet weak var MainPageTableView: UITableView!
    
-    var list = ["author", ]
+    var firstNameList = ["First Name"]
+    var lastNameList = ["Last Name"]
+    var titleList = ["Book Title"]
+    var currentPageList = ["25"]
+    var totalPagesList = ["100"]
+    var percentageList = [25]
   
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    MainPageTableView.dataSource = self
-        }
+    MainPageTableView.dataSource = self }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
-    }
+        return titleList.count }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MainPageCell", for: indexPath)
-        cell.textLabel?.text = "\(list[indexPath.row])"
-        return cell
-    }
+       let cell = tableView.dequeueReusableCell(withIdentifier: "MainPageCell", for: indexPath)
+        cell.textLabel?.text = "\(lastNameList[indexPath.row]), \(firstNameList[indexPath.row]): \(titleList[indexPath.row])"
+        cell.detailTextLabel?.text = "Page \(currentPageList[indexPath.row])/\(totalPagesList[indexPath.row]) Percentage: \(percentageList[indexPath.row])%"
+        return cell }
 
 func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
        if editingStyle == UITableViewCell.EditingStyle.delete{
-           list.remove(at: indexPath.row)
-           tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+           titleList.remove(at: indexPath.row)
+           tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic) } }
+  
+    
+    
+    
 }
-}
-   
-}
-
