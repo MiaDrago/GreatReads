@@ -8,13 +8,23 @@
 import UIKit
 
 class EditViewController: UIViewController {
-
+    @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var FirstNameLabel: UILabel!
+    @IBOutlet weak var LastNameLabel: UILabel!
+    @IBOutlet weak var CurrentPageTextField: UITextField!
+    @IBOutlet weak var TotalPageLabel: UILabel!
+    @IBOutlet weak var PercentageLabel: UILabel!
+   
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        super.viewDidLoad(
+       }
+    
+    @IBAction func UpdatedSaveButton(_ sender: Any) {
+        func prepare(for segue: UIStoryboardSegue, sender: Any?){
+            let nvc = segue.destination as! ViewController
+            
     }
     
-
     
+}
 }
