@@ -21,9 +21,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        MainPageTableView.dataSource = self }
-    
+
+    MainPageTableView.dataSource = self
+        navigationItem.backButtonTitle = "Save"
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lastNameList.count }
@@ -32,7 +33,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        let cell = tableView.dequeueReusableCell(withIdentifier: "MainPageCell", for: indexPath)
         cell.textLabel?.text = "\(lastNameList[indexPath.row]), \(firstNameList[indexPath.row]): \(titleList[indexPath.row])"
         cell.detailTextLabel?.text = "Page \(currentPageList[indexPath.row])/\(totalPagesList[indexPath.row]) Percentage: \(percentageList[indexPath.row])%"
-        return cell }
+        cell.contentView.backgroundColor = UIColor.systemPink
+        return cell}
 
 func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
        if editingStyle == UITableViewCell.EditingStyle.delete{
@@ -42,4 +44,5 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
    
  
     
+
 }

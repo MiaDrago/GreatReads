@@ -18,9 +18,10 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.backButtonTitle = "Save"
     }
     
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nvc = segue.destination as! ViewController
        
@@ -37,7 +38,9 @@ class AddViewController: UIViewController {
         nvc.currentPageList.append(currentEntered)
         
         } else {
-            //alert
+            let errorAlert = UIAlertController(title: "Error", message: "Please make sure all areas are completed", preferredStyle: .alert)
+            errorAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(errorAlert, animated: true, completion: nil)
        }
        
    }
