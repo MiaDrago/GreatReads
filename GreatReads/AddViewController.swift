@@ -17,8 +17,8 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.backButtonTitle = "Save"
+        navigationItem.titleView?.tintColor = .systemPink
     }
     
 

@@ -61,11 +61,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="LkV-8z-kZV">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="gMa-P8-vj0">
+                            <color key="tintColor" systemColor="systemPinkColor"/>
                             <connections>
                                 <segue destination="ENh-BM-Gfu" kind="show" id="r3B-Z0-syt"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="book.fill" catalog="system" id="8dg-HD-4Uz">
+                            <color key="tintColor" systemColor="systemPinkColor"/>
                             <connections>
                                 <segue destination="9iy-br-0Rz" kind="show" identifier="addSegue" id="n9O-0R-IDg"/>
                             </connections>
@@ -92,7 +94,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BG-Tx-8JB">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="163.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -101,13 +103,13 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWL-EZ-ifN">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="163.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jy2-FQ-8Gl">
                                                 <rect key="frame" x="207" y="0.0" width="207" height="163.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -118,12 +120,12 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Update Current Page" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2c-ih-L7f">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="163.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BC2-H8-lJx">
                                                 <rect key="frame" x="207" y="0.0" width="207" height="163.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -131,7 +133,7 @@
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%%%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myy-B4-9aS">
                                         <rect key="frame" x="0.0" y="580.5" width="414" height="163.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -148,7 +150,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Your Book!" id="rK4-oa-08u">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="bookmark.fill" catalog="system" id="SDy-Cn-DIJ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="bookmark.fill" catalog="system" id="SDy-Cn-DIJ">
+                            <color key="tintColor" systemColor="systemPinkColor"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="CurrentPageTextField" destination="R2c-ih-L7f" id="H7c-P9-jYo"/>
@@ -163,7 +167,7 @@
             </objects>
             <point key="canvasLocation" x="978" y="811"/>
         </scene>
-        <!--Add View Controller-->
+        <!--Add A New Book!-->
         <scene sceneID="Eiz-XR-Lpc">
             <objects>
                 <viewController id="9iy-br-0Rz" customClass="AddViewController" customModule="GreatReads" customModuleProvider="target" sceneMemberID="viewController">
@@ -217,13 +221,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add A New Book!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zG3-TN-Fel">
-                                <rect key="frame" x="141" y="79" width="133" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fBC-uC-0m4"/>
                         <color key="backgroundColor" red="1" green="0.8084246759" blue="0.92965217109999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -234,7 +231,7 @@
                             <constraint firstItem="c5O-vI-MuZ" firstAttribute="leading" secondItem="fBC-uC-0m4" secondAttribute="leading" id="g7o-gK-cbF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WXC-nb-7Tt"/>
+                    <navigationItem key="navigationItem" title="Add A New Book!" id="WXC-nb-7Tt"/>
                     <connections>
                         <outlet property="PercentageDoneLabel" destination="IrB-z9-2aD" id="lX4-fa-N5q"/>
                         <outlet property="currentPageTexrField" destination="YpX-Nz-ggm" id="rDa-nw-zE8"/>
@@ -267,9 +264,11 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tMT-SS-9RL">
                                 <rect key="frame" x="0.0" y="88" width="414" height="724"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4d2-a1-wvS">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4d2-a1-wvS">
                                 <rect key="frame" x="157" y="829" width="100" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Search">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
@@ -292,11 +291,13 @@
                     <navigationItem key="navigationItem" id="gGO-8y-Rqn">
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="plus.magnifyingglass" catalog="system" id="tyU-uS-sE1">
+                                <color key="tintColor" systemColor="systemPinkColor"/>
                                 <connections>
                                     <action selector="zoomIn:" destination="ENh-BM-Gfu" id="a7I-zB-gxd"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="minus.magnifyingglass" catalog="system" id="4fh-Kd-ENs">
+                                <color key="tintColor" systemColor="systemPinkColor"/>
                                 <connections>
                                     <action selector="zoomOut:" destination="ENh-BM-Gfu" id="A9r-CX-nEV"/>
                                 </connections>
@@ -338,6 +339,9 @@
         <image name="plus.magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
