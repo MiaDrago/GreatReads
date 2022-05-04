@@ -21,11 +21,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    MainPageTableView.dataSource = self }
+    
+        MainPageTableView.dataSource = self }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleList.count }
+        return lastNameList.count }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "MainPageCell", for: indexPath)
@@ -39,5 +40,6 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic) } }
   
    
+ 
     
 }

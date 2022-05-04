@@ -60,6 +60,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LkV-8z-kZV">
+                        <barButtonItem key="backBarButtonItem" title="Save" id="l21-go-osy"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="gMa-P8-vj0">
                             <connections>
                                 <segue destination="ENh-BM-Gfu" kind="show" id="r3B-Z0-syt"/>
@@ -79,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="83.705357142857139"/>
         </scene>
-        <!--Edit View Controller-->
+        <!--EDIT entry-->
         <scene sceneID="gpf-Km-1iz">
             <objects>
                 <viewController id="Wjc-7v-Rc2" customClass="EditViewController" customModule="GreatReads" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,13 +138,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Your Book Data!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnG-B4-ktC">
-                                <rect key="frame" x="129" y="45" width="156" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FA2-Hp-cYp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -154,13 +148,7 @@
                             <constraint firstItem="5e8-MP-TzE" firstAttribute="leading" secondItem="FA2-Hp-cYp" secondAttribute="leading" id="wDA-6I-0xT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rK4-oa-08u">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="bookmark.fill" catalog="system" id="SDy-Cn-DIJ">
-                            <connections>
-                                <action selector="UpdatedSaveButton:" destination="Wjc-7v-Rc2" id="fSy-Uv-dEp"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="EDIT entry" id="rK4-oa-08u"/>
                     <connections>
                         <outlet property="CurrentPageTextField" destination="R2c-ih-L7f" id="H7c-P9-jYo"/>
                         <outlet property="FirstNameLabel" destination="fWL-EZ-ifN" id="XcS-AL-ft1"/>
@@ -174,7 +162,7 @@
             </objects>
             <point key="canvasLocation" x="978" y="811"/>
         </scene>
-        <!--Add View Controller-->
+        <!--ADD entry-->
         <scene sceneID="Eiz-XR-Lpc">
             <objects>
                 <viewController id="9iy-br-0Rz" customClass="AddViewController" customModule="GreatReads" customModuleProvider="target" sceneMemberID="viewController">
@@ -228,13 +216,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add A New Book!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zG3-TN-Fel">
-                                <rect key="frame" x="141" y="79" width="133" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fBC-uC-0m4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -245,7 +226,7 @@
                             <constraint firstItem="c5O-vI-MuZ" firstAttribute="leading" secondItem="fBC-uC-0m4" secondAttribute="leading" id="g7o-gK-cbF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WXC-nb-7Tt"/>
+                    <navigationItem key="navigationItem" title="ADD entry" id="WXC-nb-7Tt"/>
                     <connections>
                         <outlet property="PercentageDoneLabel" destination="IrB-z9-2aD" id="lX4-fa-N5q"/>
                         <outlet property="currentPageTexrField" destination="YpX-Nz-ggm" id="rDa-nw-zE8"/>
@@ -259,7 +240,7 @@
             </objects>
             <point key="canvasLocation" x="1837.68115942029" y="356.91964285714283"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Libraries Near You-->
         <scene sceneID="vzW-ju-Hg8">
             <objects>
                 <viewController id="ENh-BM-Gfu" customClass="MapViewController" customModule="GreatReads" customModuleProvider="target" sceneMemberID="viewController">
@@ -300,7 +281,7 @@
                             <constraint firstItem="mTd-Xb-54L" firstAttribute="trailing" secondItem="tMT-SS-9RL" secondAttribute="trailing" id="zbm-Wc-0Lr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gGO-8y-Rqn">
+                    <navigationItem key="navigationItem" title="Libraries Near You" id="gGO-8y-Rqn">
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="plus.magnifyingglass" catalog="system" id="tyU-uS-sE1">
                                 <connections>

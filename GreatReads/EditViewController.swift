@@ -8,6 +8,7 @@
 import UIKit
 
 class EditViewController: UIViewController {
+    
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var FirstNameLabel: UILabel!
     @IBOutlet weak var LastNameLabel: UILabel!
@@ -16,15 +17,8 @@ class EditViewController: UIViewController {
     @IBOutlet weak var PercentageLabel: UILabel!
    
     override func viewDidLoad() {
-        super.viewDidLoad(
+        super.viewDidLoad()
        }
     
-    @IBAction func UpdatedSaveButton(_ sender: Any) {
-        func prepare(for segue: UIStoryboardSegue, sender: Any?){
-            let nvc = segue.destination as! ViewController
-            
-    }
-    
-    
-}
+   
 }
