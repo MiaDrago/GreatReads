@@ -16,15 +16,10 @@ class EditViewController: UIViewController {
     @IBOutlet weak var PercentageLabel: UILabel!
    
     override func viewDidLoad() {
-        super.viewDidLoad(
+        super.viewDidLoad()
        }
     
-    @IBAction func UpdatedSaveButton(_ sender: Any) {
-        func prepare(for segue: UIStoryboardSegue, sender: Any?){
-            let nvc = segue.destination as! ViewController
-            
+   
     }
     
     
-}
-}
