@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UINavigationControllerDelegate{
 
    
     @IBOutlet weak var MainPageTableView: UITableView!
@@ -18,12 +18,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var currentPageList = ["25"]
     var totalPagesList = ["100"]
     var percentageList = [25]
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     MainPageTableView.dataSource = self
-        navigationItem.backButtonTitle = "Save"
+    navigationController?.delegate = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,13 +35,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.contentView.backgroundColor = UIColor.systemPink
         return cell}
 
-func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
        if editingStyle == UITableViewCell.EditingStyle.delete{
            titleList.remove(at: indexPath.row)
            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic) } }
-  
    
- 
+   //MainPageTableView.reloadData()
+    //let userDefaults = UserDefaults.standard
+    //let item = ""
+    //userDefaults.set(item, forKey: "MyItem")
     
 
 }

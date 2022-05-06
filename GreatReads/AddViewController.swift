@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -20,36 +20,46 @@ class AddViewController: UIViewController {
         navigationItem.backButtonTitle = "Save"
         navigationItem.titleView?.tintColor = .systemPink
     }
-    
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nvc = segue.destination as! ViewController
-       
-        if let firstNameEntered = firstNameTextField.text,
-           let lastNameEntered = lastNameTextField.text,
-           let titleEntered = titleTextField.text,
-           let totalEntered = totalPagesTextField.text,
-           let currentEntered = currentPageTexrField.text {
-       
-        nvc.firstNameList.append(firstNameEntered)
-        nvc.lastNameList.append(lastNameEntered)
-        nvc.titleList.append(titleEntered)
-        nvc.totalPagesList.append(totalEntered)
-        nvc.currentPageList.append(currentEntered)
-        
-        } else {
-            let errorAlert = UIAlertController(title: "Error", message: "Please make sure all areas are completed", preferredStyle: .alert)
+   
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        if viewController as? ViewController {
+            let firstNameEntered = firstNameTextField.text.self
+            let lastNameEntered = lastNameTextField.text.self
+            let titleEntered = titleTextField.text.self
+            let totalEntered = totalPagesTextField.text.self
+            let currentEntered = currentPageTexrField.text.self
+            var firstNameList = ["First Name"]
+            var lastNameList = ["Last Name"]
+            var titleList = ["Book Title"]
+            var currentPageList = ["25"]
+            var totalPagesList = ["100"]
+            var percentageList = [25
+                                  
+        vc.firstNameList.append(firstNameEntered)
+        vc.lastNameList.append(lastNameEntered)
+        vc.titleList.append(titleEntered)
+        vc.totalPagesList.append(totalEntered)
+        vc.currentPageList.append(currentEntered)
+    } else {
+        let errorAlert = UIAlertController(title: "Error", message: "Please make sure all areas are completed", preferredStyle: .alert)
             errorAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             present(errorAlert, animated: true, completion: nil)
-       }
+               }
+            }
+        
+    
+ 
+   
        
-   }
+     
+       
+   
   
  
  
     
     
-    }
+    
     
 
    
