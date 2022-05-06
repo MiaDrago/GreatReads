@@ -22,7 +22,7 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
     }
    
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
-        if viewController as? ViewController {
+        if ((viewController as? ViewController) != nil) {
             let firstNameEntered = firstNameTextField.text.self
             let lastNameEntered = lastNameTextField.text.self
             let titleEntered = titleTextField.text.self
@@ -33,7 +33,7 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
             var titleList = ["Book Title"]
             var currentPageList = ["25"]
             var totalPagesList = ["100"]
-            var percentageList = [25
+            var percentageList = [25 
                                   
         vc.firstNameList.append(firstNameEntered)
         vc.lastNameList.append(lastNameEntered)
