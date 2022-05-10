@@ -8,6 +8,7 @@
 import UIKit
 class AddViewController: UIViewController, UINavigationControllerDelegate {
     
+    var data = ""
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -20,34 +21,35 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
         navigationItem.backButtonTitle = "Save"
         navigationItem.titleView?.tintColor = .systemPink
     }
+    
    
+    
+   //sending data
+    
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         if ((viewController as? ViewController) != nil) {
+       
             let firstNameEntered = firstNameTextField.text.self
             let lastNameEntered = lastNameTextField.text.self
             let titleEntered = titleTextField.text.self
             let totalEntered = totalPagesTextField.text.self
             let currentEntered = currentPageTexrField.text.self
-            var firstNameList = ["First Name"]
-            var lastNameList = ["Last Name"]
-            var titleList = ["Book Title"]
-            var currentPageList = ["25"]
-            var totalPagesList = ["100"]
-            var percentageList = [25 
-                                  
-        vc.firstNameList.append(firstNameEntered)
-        vc.lastNameList.append(lastNameEntered)
-        vc.titleList.append(titleEntered)
-        vc.totalPagesList.append(totalEntered)
-        vc.currentPageList.append(currentEntered)
+
+        data.firstNameList.append(firstNameEntered)
+        data.lastNameList.append(lastNameEntered)
+        data.titleList.append(titleEntered)
+        data.totalPagesList.append(totalEntered)
+        data.currentPageList.append(currentEntered)
+  
     } else {
+        
         let errorAlert = UIAlertController(title: "Error", message: "Please make sure all areas are completed", preferredStyle: .alert)
             errorAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            present(errorAlert, animated: true, completion: nil)
-               }
-            }
-        
+        present(errorAlert, animated: true, completion: nil)
+}
     
+        
+        
  
    
        
