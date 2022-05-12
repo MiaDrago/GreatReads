@@ -43,9 +43,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Wjc-7v-Rc2" kind="show" id="Fw2-Gn-AKr"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -67,10 +64,10 @@
                                 <segue destination="ENh-BM-Gfu" kind="show" id="r3B-Z0-syt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="book.fill" catalog="system" id="8dg-HD-4Uz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8dg-HD-4Uz">
                             <color key="tintColor" systemColor="systemPinkColor"/>
                             <connections>
-                                <segue destination="9iy-br-0Rz" kind="show" identifier="addSegue" id="n9O-0R-IDg"/>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="qJv-kz-bJk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -91,25 +88,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="5e8-MP-TzE">
-                                <rect key="frame" x="0.0" y="118" width="414" height="744"/>
+                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BG-Tx-8JB">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="174.5"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sAd-em-1t7">
-                                        <rect key="frame" x="0.0" y="193.5" width="414" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="204.5" width="414" height="174.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWL-EZ-ifN">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="163.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="174.5"/>
                                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jy2-FQ-8Gl">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="163.5"/>
+                                                <rect key="frame" x="207" y="0.0" width="207" height="174.5"/>
                                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -117,15 +114,15 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wwj-NA-L89">
-                                        <rect key="frame" x="0.0" y="387" width="414" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="409" width="414" height="174.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Update Current Page" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2c-ih-L7f">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="163.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="174.5"/>
                                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BC2-H8-lJx">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="163.5"/>
+                                                <rect key="frame" x="207" y="0.0" width="207" height="174.5"/>
                                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -133,7 +130,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%%%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myy-B4-9aS">
-                                        <rect key="frame" x="0.0" y="580.5" width="414" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="613.5" width="414" height="174.5"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -177,45 +174,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="c5O-vI-MuZ">
-                                <rect key="frame" x="0.0" y="118" width="414" height="744"/>
+                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8rd-IT-V1X">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="174.5"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2jj-ye-Mom">
-                                        <rect key="frame" x="0.0" y="193.5" width="414" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="204.5" width="414" height="174.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Fb-LA-kDg">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="163.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="174.5"/>
                                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulG-et-gEH">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="163.5"/>
+                                                <rect key="frame" x="207" y="0.0" width="207" height="174.5"/>
                                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iIB-uK-1bV">
-                                        <rect key="frame" x="0.0" y="387" width="414" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="409" width="414" height="174.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current Page" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YpX-Nz-ggm">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="163.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="174.5"/>
                                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Total Pages" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MaY-ud-bOC">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="163.5"/>
+                                                <rect key="frame" x="207" y="0.0" width="207" height="174.5"/>
                                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%%%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrB-z9-2aD">
-                                        <rect key="frame" x="0.0" y="580.5" width="414" height="163.5"/>
+                                        <rect key="frame" x="0.0" y="613.5" width="414" height="174.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -333,7 +330,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="book.fill" catalog="system" width="128" height="95"/>
         <image name="bookmark.fill" catalog="system" width="112" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="minus.magnifyingglass" catalog="system" width="128" height="115"/>

@@ -8,61 +8,83 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UINavigationControllerDelegate{
-
-    @IBOutlet weak var activityIndicator:UIActivityIndicatorView!
+    
+    
     @IBOutlet weak var MainPageTableView: UITableView!
-   
+    
+    var titleList = ["Book Title"]
     var firstNameList = ["First Name"]
     var lastNameList = ["Last Name"]
-    var titleList = ["Book Title"]
     var currentPageList = ["25"]
     var totalPagesList = ["100"]
-    var percentageList = [25]
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
-    MainPageTableView.dataSource = self
-    navigationController?.delegate = self
-    //activityIndicator.startAnimating()
-    
+        
+        MainPageTableView.dataSource = self
+        navigationController?.delegate = self
+        
+        
     }
     
-    //tableview rows
+    //MARK: tableview rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lastNameList.count }
- 
-    //title and subtitles
+    
+    //MARK: title and subtitles
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: "MainPageCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainPageCell", for: indexPath)
         cell.textLabel?.text = "\(lastNameList[indexPath.row]), \(firstNameList[indexPath.row]): \(titleList[indexPath.row])"
-        cell.detailTextLabel?.text = "Page \(currentPageList[indexPath.row])/\(totalPagesList[indexPath.row]) Percentage: \(percentageList[indexPath.row])%"
+        cell.detailTextLabel?.text = "Page \(currentPageList[indexPath.row])/\(totalPagesList[indexPath.row])"
         cell.contentView.backgroundColor = UIColor.systemPink
         return cell}
-
-    //deleting rows
+    
+    //MARK: deleting rows
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-       if editingStyle == UITableViewCell.EditingStyle.delete {
-           titleList.remove(at: indexPath.row)
-           tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic) } }
-   
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! AddViewController
-        vc.data = firstNameList[MainPageTableView.indexPathForSelectedRow!.row]
-    }
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            titleList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic) } }
     
-    }
+    //MARK: add alert
+    @IBAction func addButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Add New Entry", message: "Fill out the textfields with the required information to add a new entrt", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Book Title" }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Author First Name" }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Author Last Name" }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Total Pages in Book" }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Current Page" }
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        
+        alert.addAction(UIAlertAction(title: "Enter", style: .default ) { action in
+            let enteredTitle = alert.textFields?[0].text
+            let enteredFirstName = alert.textFields?[1].text
+            let enteredLastName = alert.textFields?[2].text
+            let enteredTotalPages = alert.textFields?[3].text
+            let enteredCurrentPage = alert.textFields?[4].text
+            
+            self.titleList.append(enteredTitle!)
+            self.firstNameList.append(enteredFirstName!)
+            self.lastNameList.append(enteredLastName!)
+            self.currentPageList.append(enteredCurrentPage!)
+            self.totalPagesList.append(enteredTotalPages!)
+            self.MainPageTableView.reloadData()
+            
+        } )
+        
+        
+        
+        present(alert, animated: true, completion: nil) }
     
-Hiya Maggie! I hope your AP tests went well. I just wanted to give you a little summary about whats up with the app. Right now I am still trying to send data through the segue. Mr. Brown said to call to a ceratin row and its array then after we append the data to send it back. I have not been  sucessful but maybe you will!! I started code for the indicator view as well. I hope to see you before I graduate however I do not know if that will happen. Ive really enjoyed working with you this past year and I wish you the best in the future :) heres my number if you need anything! 2247750162 
-   
     
     
     
-    
-    //MainPageTableView.reloadData()
-    //let userDefaults = UserDefaults.standard
-    //let item = ""
-    //userDefaults.set(item, forKey: "MyItem")
-    
-
 }

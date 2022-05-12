@@ -8,7 +8,7 @@
 import UIKit
 class AddViewController: UIViewController, UINavigationControllerDelegate {
     
-    var data = ""
+ 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -35,11 +35,11 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
             let totalEntered = totalPagesTextField.text.self
             let currentEntered = currentPageTexrField.text.self
 
-        data.firstNameList.append(firstNameEntered)
-        data.lastNameList.append(lastNameEntered)
-        data.titleList.append(titleEntered)
-        data.totalPagesList.append(totalEntered)
-        data.currentPageList.append(currentEntered)
+//        firstNameList.append(firstNameEntered)
+//        lastNameList.append(lastNameEntered)
+//        titleList.append(titleEntered)
+//        totalPagesList.append(totalEntered)
+//        currentPageList.append(currentEntered)
   
     } else {
         
@@ -71,3 +71,5 @@ class AddViewController: UIViewController, UINavigationControllerDelegate {
     
 
 
+    }
+}
