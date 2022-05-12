@@ -17,8 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var lastNameList = ["Last Name"]
     var currentPageList = ["25"]
     var totalPagesList = ["100"]
-    
-    
+    var percentageList = [25]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +36,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainPageCell", for: indexPath)
         cell.textLabel?.text = "\(lastNameList[indexPath.row]), \(firstNameList[indexPath.row]): \(titleList[indexPath.row])"
-        cell.detailTextLabel?.text = "Page \(currentPageList[indexPath.row])/\(totalPagesList[indexPath.row])"
-        cell.contentView.backgroundColor = UIColor.systemPink
+        cell.detailTextLabel?.text = "Page \(currentPageList[indexPath.row])/\(totalPagesList[indexPath.row]), \(percentageList[indexPath.row])% done"
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 17.0)
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 13)
         return cell}
     
     //MARK: deleting rows
@@ -49,7 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: add alert
     @IBAction func addButtonPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Add New Entry", message: "Fill out the textfields with the required information to add a new entrt", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add New Entry", message: "Fill out the textfields with the required information to add a new entry", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Book Title" }
         alert.addTextField { (textField) in
@@ -70,18 +70,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let enteredLastName = alert.textFields?[2].text
             let enteredTotalPages = alert.textFields?[3].text
             let enteredCurrentPage = alert.textFields?[4].text
+           
+            let totalInt = Int(enteredTotalPages!)!
+            let currentInt = Int(enteredCurrentPage!)!
+            let percentageDone = currentInt / totalInt
             
             self.titleList.append(enteredTitle!)
             self.firstNameList.append(enteredFirstName!)
             self.lastNameList.append(enteredLastName!)
             self.currentPageList.append(enteredCurrentPage!)
             self.totalPagesList.append(enteredTotalPages!)
-            self.MainPageTableView.reloadData()
-            
-        } )
-        
-        
-        
+            self.percentageList.append(percentageDone)
+            self.MainPageTableView.reloadData() })
+    
         present(alert, animated: true, completion: nil) }
     
     
