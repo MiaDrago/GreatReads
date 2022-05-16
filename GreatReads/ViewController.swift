@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var lastNameList = ["Last Name"]
     var currentPageList = ["25"]
     var totalPagesList = ["100"]
-    var percentageList = [25]
+    var percentageList = [25.0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             titleList.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic) } }
+            firstNameList.remove(at: indexPath.row)
+            lastNameList.remove(at: indexPath.row)
+            currentPageList.remove(at: indexPath.row)
+            totalPagesList.remove(at: indexPath.row)
+            percentageList.remove(at: indexPath.row)
+            MainPageTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic) }}
     
     //MARK: add alert
     @IBAction func addButtonPressed(_ sender: Any) {
@@ -65,24 +70,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         alert.addAction(UIAlertAction(title: "Enter", style: .default ) { action in
-            let enteredTitle = alert.textFields?[0].text
-            let enteredFirstName = alert.textFields?[1].text
-            let enteredLastName = alert.textFields?[2].text
-            let enteredTotalPages = alert.textFields?[3].text
-            let enteredCurrentPage = alert.textFields?[4].text
-           
-            let totalInt = Int(enteredTotalPages!)!
-            let currentInt = Int(enteredCurrentPage!)!
-            let percentageDone = currentInt / totalInt
-            
-            self.titleList.append(enteredTitle!)
-            self.firstNameList.append(enteredFirstName!)
-            self.lastNameList.append(enteredLastName!)
-            self.currentPageList.append(enteredCurrentPage!)
-            self.totalPagesList.append(enteredTotalPages!)
-            self.percentageList.append(percentageDone)
-            self.MainPageTableView.reloadData() })
-    
+            if let enteredTitle = alert.textFields?[0].text, let enteredFirstName = alert.textFields?[1].text, let enteredLastName = alert.textFields?[2].text, let enteredTotalPages = alert.textFields?[3].text, let enteredCurrentPage = alert.textFields?[4].text, let totalDouble = Double(enteredTotalPages), let currentDouble = Double(enteredCurrentPage) {
+               
+                let percentageDone = currentDouble / totalDouble
+                let realPercentageDone = percentageDone * 100
+                let realPercentageDoneRounded = realPercentageDone.rounded()
+                
+                self.titleList.append(enteredTitle)
+                self.firstNameList.append(enteredFirstName)
+                self.lastNameList.append(enteredLastName)
+                self.currentPageList.append(enteredCurrentPage)
+                self.totalPagesList.append(enteredTotalPages)
+                self.percentageList.append(realPercentageDoneRounded)
+                self.MainPageTableView.reloadData() }
+        })
+
         present(alert, animated: true, completion: nil) }
     
     
