@@ -29,7 +29,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.showsUserLocation = true
     
     }
-    
+    //MARK: Setup
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
         if isInitialLoad {
             initialRegion = MKCoordinateRegion(center: mapView.centerCoordinate, span: mapView.region.span)
@@ -39,7 +39,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations[0] }
     
-    
+    //MARK: Searching
     @IBAction func searchPressed(_ sender: UIButton) {
         let request = MKLocalSearch.Request()
         
@@ -55,8 +55,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = mapItem.placemark.coordinate
                 annotation.title = mapItem.name
-                self.mapView.addAnnotation(annotation) } } }
+                self.mapView.addAnnotation(annotation)
+                
+            } } }
     
+    //MARK: Zoom
     @IBAction func zoomIn(_ sender: UIBarButtonItem) {
         let mySpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let myCenter = currentLocation.coordinate
