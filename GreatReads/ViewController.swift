@@ -55,6 +55,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: Add alert
     @IBAction func addButtonPressed(_ sender: Any) {
+       
         let alert = UIAlertController(title: "ADD NEW ENTRY", message: "Fill out the required information to ADD a new entry", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Book Title" }
@@ -82,35 +83,52 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.totalPagesList.append(enteredTotalPages)
                 self.percentageList.append(realPercentageDoneRounded)
                 self.MainPageTableView.reloadData() } })
-        present(alert, animated: true, completion: nil) }
+            present(alert, animated: true, completion: nil) }
     
 
     //MARK: Edit alert
     @IBAction func whenEditPressed(_ sender: UIBarButtonItem) {
-        let editAlert = UIAlertController(title: "UPDATE ENTRY", message: "Fill out the information below that corresponds with the entry you'd like to update", preferredStyle: .alert)
-        editAlert.addTextField { (textField) in
-            textField.placeholder = "Book Title" }
-        editAlert.addTextField() { (textField) in
-            textField.placeholder = "New Current Page" }
-        editAlert.addTextField() { (textField) in
-            textField.placeholder = "Total Pages" }
+        guard let indexPathSeleccted = MainPageTableView.indexPathForSelectedRow else {return}
+        let rowSelected = indexPathSeleccted.row
+        
+        let editAlert = UIAlertController(title: "UPDATE ENTRY", message: "Fill out the information below to UPDATE an entry", preferredStyle: .alert)
+       editAlert.addTextField { (textField) in
+           let selectedBook = self.titleList[rowSelected]
+           textField.placeholder = "New current page for \(selectedBook)"
+       }
+           
         editAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        editAlert.addAction(UIAlertAction(title: "Enter", style: .default, handler: { action in
-            if let enteredTitle = editAlert.textFields?[0].text, let newPage = editAlert.textFields?[1].text, let enteredTotal = editAlert.textFields?[2].text, let currentDouble = Double(newPage), let totalDouble = Double(enteredTitle) {
-                if self.titleList.contains(enteredTitle) {
-                    self.currentPageList.append(newPage)
-                    self.totalPagesList.append(enteredTitle)
-                    self.titleList.append(enteredTitle)
-                    let newPercentageDone = currentDouble / totalDouble
-                    let actualNewPercentage = newPercentageDone * 100
-                    let roundedPercentage = actualNewPercentage.rounded()
-                    self.percentageList.append(roundedPercentage)
-                    self.MainPageTableView.reloadData() }}}))
-    present(editAlert, animated: true, completion: nil)}
+           
+        editAlert.addAction(UIAlertAction(title: "Enter", style: .default) { action in
+            let page = self.currentPageList[rowSelected]
+            let textField = editAlert.textFields!
+            let newPage = textField[0].text!
+           // let percent = self.percentageList[rowSelected]
+            
+            
+            
+            self.currentPageList.remove(at: rowSelected)
+            self.currentPageList.append(newPage)
+            
+            
+            self.MainPageTableView.reloadData()
+            
+            
+            
+        })
+         
+            
+            
+            
+        
+            
+   present(editAlert, animated: true, completion: nil) }
     
     
     
     
     
     
-}
+
+    }
+
