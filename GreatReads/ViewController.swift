@@ -14,8 +14,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var titleList = ["Book Title"]
     var firstNameList = ["First Name"]
     var lastNameList = ["Last Name"]
-    var currentPageList = ["25"]
-    var totalPagesList = ["100"]
+    var currentPageList = [25.0]
+    var totalPagesList = [100.0]
     var percentageList = [25.0]
     
     override func viewDidLoad() {
@@ -79,8 +79,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.titleList.append(enteredTitle)
                 self.firstNameList.append(enteredFirstName)
                 self.lastNameList.append(enteredLastName)
-                self.currentPageList.append(enteredCurrentPage)
-                self.totalPagesList.append(enteredTotalPages)
+                self.currentPageList.append(currentDouble)
+                self.totalPagesList.append(totalDouble)
                 self.percentageList.append(realPercentageDoneRounded)
                 self.MainPageTableView.reloadData() } })
             present(alert, animated: true, completion: nil) }
@@ -102,25 +102,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         editAlert.addAction(UIAlertAction(title: "Enter", style: .default) { action in
             let page = self.currentPageList[rowSelected]
             let textField = editAlert.textFields!
-            let newPage = textField[0].text!
-           // let percent = self.percentageList[rowSelected]
+            let newPage = Double(textField[0].text!)!
+            let totalPages = Double(self.totalPagesList[rowSelected])
+            let percent = newPage / totalPages
+            let realPercentageDone = percent * 100
+            let roundedPercent = realPercentageDone.rounded()
             
-            
-            
+            self.percentageList.remove(at: rowSelected)
+            self.percentageList.append(roundedPercent)
             self.currentPageList.remove(at: rowSelected)
             self.currentPageList.append(newPage)
             
             
-            self.MainPageTableView.reloadData()
-            
-            
-            
-        })
-         
-            
-            
-            
-        
+            self.MainPageTableView.reloadData() })
             
    present(editAlert, animated: true, completion: nil) }
     
